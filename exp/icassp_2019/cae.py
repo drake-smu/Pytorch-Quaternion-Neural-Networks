@@ -14,7 +14,7 @@ def rgb2gray(rgb):
 
 
 MODEL         = str(sys.argv[1])
-CUDA          = True
+CUDA          = False 
 NUM_EPOCHS    = 3001
 LEARNING_RATE = 0.0005
 
@@ -23,8 +23,8 @@ if MODEL == 'QCAE':
 else:
     net  = CAE()
 
-if CUDA:
-    net = net.CUDA()
+#if CUDA:
+#    net = net.CUDA()
 
 #
 # LOAD PICTURE
@@ -32,7 +32,7 @@ if CUDA:
 
 os.system('rm -rf data/save_image*')
 if not os.path.isdir('out'):
-    os.system('mkdir out')
+	os.system('mkdir out')
 
 criterion = nn.MSELoss()
 optimizer = torch.optim.Adam(net.parameters(), lr=LEARNING_RATE)

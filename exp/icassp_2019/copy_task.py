@@ -6,7 +6,7 @@
 # October 2018
 ##########################################################
 
-import sys
+import sys,os
 import torch
 import torch.nn            as nn
 from   torch.nn            import Parameter
